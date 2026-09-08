@@ -9,7 +9,8 @@ pipeline {
             steps {
                 git(
                     url: 'https://github.com/DineshReddy6303/java-maven-project.git',
-                    branch: 'main'
+                    branch: 'main',
+                    credentialsId: 'github-credentials'
                 )
             }
         }
@@ -18,6 +19,7 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.8.8-eclipse-temurin-17'
+                    args '--entrypoint=""'
                 }
             }
             steps {
@@ -29,6 +31,7 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.8.8-eclipse-temurin-17'
+                    args '--entrypoint=""'
                 }
             }
             steps {
