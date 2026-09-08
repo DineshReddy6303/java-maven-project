@@ -2,6 +2,6 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
-COPY target/my-java-app-1.0.0.jar app.jar
+COPY target/my-java-app-1.0.jar app.jar
 
 CMD ["java", "-cp", "app.jar", "com.example.App"]
